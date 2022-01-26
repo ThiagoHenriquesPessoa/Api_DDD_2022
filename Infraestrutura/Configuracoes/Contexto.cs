@@ -18,14 +18,14 @@ namespace Infraestrutura.Configuracoes
         public DbSet<Noticia> Noticia { get; set; }
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(ObterStringConexao());
-                base.OnConfiguring(optionsBuilder);
-            }
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    if (!optionsBuilder.IsConfigured)
+        //    {
+        //        optionsBuilder.UseSqlServer(ObterStringConexao());
+        //        base.OnConfiguring(optionsBuilder);
+        //    }
+        //}
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -33,11 +33,11 @@ namespace Infraestrutura.Configuracoes
             base.OnModelCreating(builder);
         }
 
-        public string ObterStringConexao()
-        {
-            string stringConexao = "Server=(localdb)\\mssqllocaldb;Database=API_DDD_2022DB;Trusted_Connection=True;MultipleActiveResultSets=true";
-            return stringConexao;
-        }
+        //public string ObterStringConexao()
+        //{
+        //    string stringConexao = "Server=(localdb)\\mssqllocaldb;Database=API_DDD_2022DB;Trusted_Connection=True;MultipleActiveResultSets=true";
+        //    return stringConexao;
+        //}
 
         
     }
